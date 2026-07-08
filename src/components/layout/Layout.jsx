@@ -5,7 +5,7 @@ const Layout = ({ children }) => {
     <div className="min-h-screen bg-slate-100">
       <Header />
 
-      <main className="mx-auto max-w-7xl p-6">
+      <main className="mx-auto max-w-7xl py-6">
         {children}
       </main>
     </div>

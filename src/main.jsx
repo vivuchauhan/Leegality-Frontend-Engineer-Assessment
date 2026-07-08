@@ -5,6 +5,7 @@ import { ProductProvider } from "@/context/ProductContext";
 
 import App from "./App";
 import "./index.css";
+import "./styles/priceSlider.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>

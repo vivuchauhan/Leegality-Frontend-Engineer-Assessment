@@ -2,7 +2,7 @@ import api from "@/api/axios";
 import { API_ENDPOINTS } from "@/utils/constants";
 
 export const productService = {
-  async getProducts(limit = 12, skip = 0) {
+  async getProducts(limit = 194, skip = 0) {
     const response = await api.get(API_ENDPOINTS.PRODUCTS, {
       params: {
         limit,

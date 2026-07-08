@@ -18,7 +18,7 @@ export const initialState = {
 
   currentPage: 1,
 
-  limit: 12,
+  limit: 8,
 
   total: 0,
 };

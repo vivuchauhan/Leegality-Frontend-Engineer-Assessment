@@ -1,23 +1,29 @@
-import { createContext, useContext, useReducer } from "react";
+import { createContext, useContext, useMemo, useReducer } from "react";
 
 import { initialState } from "./initialState";
 import { productReducer } from "./ProductReducer";
+import { createProductActions } from "./ProductActions";
 
-const ProductContext = createContext();
+const ProductContext = createContext(null);
 
 export const ProductProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(
-    productReducer,
-    initialState
+  const [state, dispatch] = useReducer(productReducer, initialState);
+
+  const actions = useMemo(
+    () => createProductActions(dispatch),
+    [dispatch]
+  );
+
+  const value = useMemo(
+    () => ({
+      state,
+      actions,
+    }),
+    [state, actions]
   );
 
   return (
-    <ProductContext.Provider
-      value={{
-        state,
-        dispatch,
-      }}
-    >
+    <ProductContext.Provider value={value}>
       {children}
     </ProductContext.Provider>
   );
