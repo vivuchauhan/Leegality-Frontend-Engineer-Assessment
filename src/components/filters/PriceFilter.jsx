@@ -16,8 +16,22 @@ const PriceFilter = () => {
   const [maxPrice, setMaxPrice] = useState(highestPrice);
 
   useEffect(() => {
-    setMaxPrice(highestPrice);
-  }, [highestPrice]);
+    setMinPrice(
+      state.priceRange.min === ""
+        ? 0
+        : Number(state.priceRange.min)
+    );
+
+    setMaxPrice(
+      state.priceRange.max === ""
+        ? highestPrice
+        : Number(state.priceRange.max)
+    );
+  }, [
+    highestPrice,
+    state.priceRange.min,
+    state.priceRange.max,
+  ]);
 
   const minPercent = (minPrice / highestPrice) * 100;
   const maxPercent = (maxPrice / highestPrice) * 100;
