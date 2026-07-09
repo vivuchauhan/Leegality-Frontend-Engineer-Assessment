@@ -1,18 +1,131 @@
-# React + Vite
+# Leegality Frontend Engineer Assessment
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive React application built for the Leegality Frontend Engineer Assessment. The app lets users browse products, search across product data, apply filters, paginate results, and view detailed product information.
 
-Currently, two official plugins are available:
+## Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Demo: https://leegality-frontend-engineer-assessmen.netlify.app/
+- GitHub: https://github.com/vivuchauhan/Leegality-Frontend-Engineer-Assessment
 
-## React Compiler
+## Features
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+### Product Listing Page
+- Responsive product grid
+- Search by product title, brand, or category
+- Category, brand, and price filters
+- Client-side pagination
+- Loading, error, and empty states
 
-Note: This will impact Vite dev & build performances.
+### Product Details Page
+- Product image gallery
+- Product name, price, rating, brand, and category
+- Product description and reviews
+- Back navigation to the listing page
+- Previously selected filters remain applied when returning
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- React 19
+- Vite
+- Tailwind CSS
+- React Router DOM
+- Axios
+- Context API with useReducer
+- React Icons
+- ESLint
+
+## Project Structure
+
+```text
+src/
+├── api/
+├── components/
+│   ├── common/
+│   ├── filters/
+│   ├── layout/
+│   ├── pagination/
+│   └── product/
+├── context/
+├── hooks/
+├── pages/
+├── routes/
+├── services/
+├── styles/
+├── utils/
+├── App.jsx
+└── main.jsx
+```
+
+## Getting Started
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/vivuchauhan/Leegality-Frontend-Engineer-Assessment.git
+```
+
+### 2. Navigate to the project folder
+
+```bash
+cd Leegality-Frontend-Engineer-Assessment
+```
+
+### 3. Install dependencies
+
+```bash
+npm install
+```
+
+### 4. Configure environment variables
+
+Create a `.env` file in the project root or copy the example file:
+
+```bash
+cp .env.example .env
+```
+
+Example:
+
+```env
+VITE_BASE_URL=https://dummyjson.com
+```
+
+### 5. Start the development server
+
+```bash
+npm run dev
+```
+
+### 6. Build for production
+
+```bash
+npm run build
+```
+
+### 7. Preview the production build
+
+```bash
+npm run preview
+```
+
+### 8. Run linting
+
+```bash
+npm run lint
+```
+
+## Architecture Notes
+
+- Shared app state is managed through Context API and useReducer.
+- API calls are organized in the services layer for cleaner component logic.
+- Filtering and pagination are handled on the client for a smoother experience.
+- Lazy loading and Suspense are used for route-based code splitting.
+
+## Author
+
+Vivek Chauhan
+
+Frontend Developer
+
+- GitHub: https://github.com/vivuchauhan
+- LinkedIn: https://www.linkedin.com/in/mrvivekchauhan/
