@@ -25,6 +25,7 @@ const ProductListing = () => {
       brands: state.selectedBrands,
       minPrice: state.priceRange.min,
       maxPrice: state.priceRange.max,
+      searchQuery: state.searchQuery,
     });
   }, [
     state.products,
@@ -32,6 +33,7 @@ const ProductListing = () => {
     state.selectedBrands,
     state.priceRange.min,
     state.priceRange.max,
+    state.searchQuery,
   ]);
 
   useEffect(() => {

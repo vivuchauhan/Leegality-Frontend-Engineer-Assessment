@@ -9,6 +9,8 @@ export const initialState = {
 
   selectedCategory: "",
 
+  searchQuery: "",
+
   selectedBrands: [],
 
   priceRange: {

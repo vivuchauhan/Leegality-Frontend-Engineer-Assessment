@@ -65,6 +65,13 @@ export const productReducer = (state, action) => {
         },
         currentPage: 1,
       };
+      
+    case PRODUCT_ACTIONS.SET_SEARCH_QUERY:
+      return {
+        ...state,
+        searchQuery: action.payload,
+        currentPage: 1,
+      };
 
     default:
       return state;

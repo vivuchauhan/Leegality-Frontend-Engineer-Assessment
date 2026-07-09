@@ -86,5 +86,12 @@ export const createProductActions = (dispatch) => {
         type: PRODUCT_ACTIONS.RESET_FILTERS,
       });
     },
+    
+    setSearchQuery(query) {
+      dispatch({
+        type: PRODUCT_ACTIONS.SET_SEARCH_QUERY,
+        payload: query,
+      });
+    },
   };
 };
